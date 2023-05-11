@@ -10,7 +10,10 @@ useradd -m -u 1006 -s /usr/bin/bash data
 
 useradd -m -u 1011 -s /usr/bin/bash roon && usermod -aG data roon
 
-chown -R roon:roon /mnt/configs/roon
+mkdir -p /var/lib/roon/data
+mkdir -p /var/lib/roon/app
+
+chown -R roon:data /var/lib/roon
 
 docker compose pull
 docker compose up

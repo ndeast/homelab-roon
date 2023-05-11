@@ -10,8 +10,8 @@ services:
     environment:
         TZ: "US/Eastern"
     volumes:
-        - /mnt/configs/roon/app:/app
-        - /mnt/configs/roon/data:/data
+        - /var/lib/roon/app:/app
+        - /var/lib/roon/data:/data
         - /mnt/data/media/music:/music:ro
         - /mnt/data/media/music-unmapped:/music-unmapped:ro
         - /mnt/data/backup/roon:/backup
