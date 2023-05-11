@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+  roon-server:
+    container_name: roon-server
+    ports:
+        - '55000:55000'
+    image: steefdebruijn/docker-roonserver:latest
+    hostname: roon-server
+    network_mode: host
+    environment:
+        TZ: "US/Eastern"
+    volumes:
+        - /mnt/configs/roon/app:/app
+        - /mnt/configs/roon/data:/data
+        - /mnt/data/media/music:/music:ro
+        - /mnt/data/media/music-unmapped:/music-unmapped:ro
+        - /mnt/data/backup/roon:/backup
+    restart: always
